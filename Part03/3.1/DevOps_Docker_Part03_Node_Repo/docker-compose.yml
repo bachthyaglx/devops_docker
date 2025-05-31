@@ -1,0 +1,18 @@
+services:
+  website:
+    image: viksil/hu-docker-part3-ex3.1
+    ports:
+      - 8080:8080
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    container_name: website
+
+
+  watchtower:
+    image: containrrr/watchtower
+    environment:
+      -  WATCHTOWER_POLL_INTERVAL=60 # Poll every 60 seconds
+      -  WATCHTOWER_LABEL_ENABLE=true # only watch containers that have opted in
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    container_name: watchtower

@@ -1,0 +1,36 @@
+# fly.toml app configuration file generated for full-stack-open-pokedex-still-frog-2152 on 2025-05-17T04:56:36+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'full-stack-open-pokedex-still-frog-2152'
+primary_region = 'fra'
+
+[build]
+
+[env]
+  PORT = '3000'
+
+[processes]
+  app = 'node app.js'
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+  # Configure then an HTTP check that ensures the health of the deployments based on the HTTP request to the defined health check endpoint.
+  [[http_service.checks]]
+    grace_period = "10s"
+    interval = "30s"
+    method = "GET"
+    timeout = "5s"
+    path = "/"
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
