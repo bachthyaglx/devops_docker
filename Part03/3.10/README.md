@@ -37,4 +37,4 @@
 
 ### Image Size Change
 
-![Solution to Exercise 3.10](https://raw.githubusercontent.com/VikSil/DevOps_with_Docker/refs/heads/trunk/Part3/Exercise_3.10/Dockerfile_size_change.png)
+    The image size was reduced from ~1.1 GB to ~140 MB, and the image now runs as a non-root user.
