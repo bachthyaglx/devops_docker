@@ -1,0 +1,19 @@
+FROM node:16
+
+# Create app directory
+WORKDIR /usr/src/app
+COPY . .
+
+# Create a non-root user
+RUN useradd -m bachthyaglx
+
+# Install dependencies and build
+RUN npm install
+RUN npm install -g serve
+RUN npm run build
+
+# Use non-root user
+USER bachthyaglx
+
+EXPOSE 5000
+CMD ["serve", "-s", "-l", "5000", "build"]

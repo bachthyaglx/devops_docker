@@ -1,0 +1,17 @@
+FROM golang:1.16-alpine
+
+# Create a non-root user
+RUN adduser -D -g '' bachthyaglx
+
+WORKDIR /usr/src/app
+COPY . .
+
+# Build the Go binary
+RUN go build
+
+# Change ownership and switch user
+RUN chown -R bachthyaglx /usr/src/app
+USER bachthyaglx
+
+EXPOSE 8080
+CMD ["./server"]

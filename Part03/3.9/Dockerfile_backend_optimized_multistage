@@ -1,0 +1,23 @@
+# ---------- Stage 1: Build the binary ----------
+FROM golang:1.16-alpine AS builder
+
+# Add non-root user (optional, for build phase only)
+RUN adduser -D builderuser
+
+WORKDIR /app
+COPY . .
+
+# Build the statically linked binary
+RUN CGO_ENABLED=0 GOOS=linux go build -o server
+
+# ---------- Stage 2: Minimal runtime using scratch ----------
+FROM scratch
+
+# Copy binary from builder stage
+COPY --from=builder /app/server /server
+
+# Use non-root user (recommended for scratch images)
+USER 1000
+
+# Run the binary
+ENTRYPOINT ["/server"]
