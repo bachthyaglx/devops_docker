@@ -17,7 +17,7 @@
 
 ## Solution
 
-# Dockerfile #
+### Dockerfile ###
 ```bash
 ARG NODE_VERSION=16.20.2
 FROM node:${NODE_VERSION}-slim AS base
@@ -37,8 +37,8 @@ EXPOSE 3000
 CMD [ "npm", "run", "start" ]
 ```
 
-# Description #
+### Description ###
 This Docker image contains production-ready of Node.js application. The image uses stages to optimize performance and size and dependencies are installed. The app is deployed on Fly.io
 
-# Link #
+### Link ###
 https://full-stack-open-pokedex-still-frog-2152.fly.dev/
