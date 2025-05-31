@@ -10,64 +10,30 @@
 
 ### Dockerfile before
 
-    FROM python:3.11.5
-
-    WORKDIR /wombo_clicker
-
-    COPY . /wombo_clicker
-
-    RUN pip3 install -r requirements.txt
-
-    RUN apt-get update && apt-get install -y wget unzip && \
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-        apt install -y ./google-chrome-stable_current_amd64.deb && \
-        rm google-chrome-stable_current_amd64.deb && \
-        apt-get clean
-
-    WORKDIR /wombo_clicker/scripts
-
-    ENTRYPOINT ["python3", "main.py"]
+    FROM node:16
+    WORKDIR /usr/src/app
+    COPY . .
+    RUN npm install
+    RUN npm run build
+    RUN npm install -g serve
+    EXPOSE 5000
+    CMD ["serve", "-s", "build", "-l", "5000"]
 
 ### Dockerfile after
 
-    FROM python:3.12.7-slim as builder
-
-    WORKDIR /wombo_clicker
-
-    RUN useradd -m builduser && chown -R builduser:builduser .
-    USER builduser
-
-    COPY requirements.txt .
-
-    RUN pip install --user --upgrade pip --no-cache-dir && \
-        pip install  --user -r requirements.txt --no-cache-dir
-
-
-
-    FROM python:3.12.7-slim-bullseye
-
-    RUN apt-get update && apt-get install -y wget unzip && \
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-        apt install -y ./google-chrome-stable_current_amd64.deb && \
-        rm google-chrome-stable_current_amd64.deb && \
-        apt-get clean
-
-    COPY . /wombo_clicker
-
-    RUN useradd -m clicker && chown -R clicker:clicker /wombo_clicker 
-        
-    COPY --from=builder /home/builduser/.local /home/clicker/.local
-
-    RUN chown -R clicker:clicker /home/clicker
-
-    ENV PATH=/home/clicker/.local:$PATH
-
-    WORKDIR /wombo_clicker/scripts
-
-    USER clicker
-
-    ENTRYPOINT ["python3", "main.py"]
-
+    FROM node:16-alpine as builder
+    WORKDIR /app
+    COPY . .
+    RUN npm install && npm run build
+    FROM node:16-alpine
+    RUN adduser -D bachthyaglx # Add non-root user
+    WORKDIR /app
+    # Copy only built static assets
+    COPY --from=builder /app/build ./build
+    RUN npm install -g serve
+    USER frontend
+    EXPOSE 5000
+    CMD ["serve", "-s", "build", "-l", "5000"]
 
 ### Image Size Change
 
