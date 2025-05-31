@@ -1,4 +1,4 @@
-## [Assignment](https://courses.mooc.fi/org/uh-cs/courses/devops-with-docker/chapter-2/utilizing-tools-from-the-registry#3a23e02b-eebf-4fbf-aaf7-623c16722e27)
+## [Assignment](https://courses.mooc.fi/org/uh-cs/courses/devops-with-docker/chapter-2/utilizing-tools-from-the-registry#191c75dc-7b7e-489d-a0b0-976646dcd735)
 
 > **EXERCISE 1.16: HOMEWORK**
 > 
