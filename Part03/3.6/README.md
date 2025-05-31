@@ -25,10 +25,6 @@
     EXPOSE 5000
     CMD ["serve", "-s", "build", "-l", "5000"]
 
-### Frontend Image Size Change
-
-![Solution to Exercise 3.6](https://raw.githubusercontent.com/VikSil/DevOps_with_Docker/refs/heads/trunk/Part3/Exercise_3.6/frontend_change.png)
-
 ### Backend Dockerfile optimized
 
     FROM golang:1.16-alpine
@@ -40,6 +36,3 @@
     EXPOSE 8080
     CMD ["./server"]
     
-### Backend Image Size Change
-
-![Solution to Exercise 3.6](https://raw.githubusercontent.com/VikSil/DevOps_with_Docker/refs/heads/trunk/Part3/Exercise_3.6/backend_change.png)
