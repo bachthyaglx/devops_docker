@@ -1,14 +1,15 @@
-FROM python:3.11.5
+FROM node:16
 
-WORKDIR /wombo_clicker
+WORKDIR /usr/src/app
 
-COPY . /wombo_clicker
+COPY . .
 
-RUN pip3 install -r requirements.txt
-RUN apt-get update && apt-get install -y wget unzip
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt install -y ./google-chrome-stable_current_amd64.deb
+RUN npm install
 
-WORKDIR /wombo_clicker/scripts
+RUN npm run build
 
-ENTRYPOINT ["python3", "main.py"]
+RUN npm install -g serve
+
+EXPOSE 5000
+
+CMD ["serve", "-s", "build", "-l", "5000"]
