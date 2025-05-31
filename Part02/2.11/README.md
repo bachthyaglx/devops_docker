@@ -8,6 +8,5 @@
 
 ## Solution
 
-```bash
-I selected a fullstack Next.js + Node.js for building my portfolio. Hence, I added a docker-compose.yml file to fully containerize the frontend, backend, database (PostgreSQL), and Redis cache. I also included NGINX as a reverse proxy. Only port 80 is exposed to the host. This made the dev environment easy to start and replicate using docker-compose up, with no manual setup needed outside the containers.
-```
+    I selected a fullstack Next.js + Node.js for building my portfolio. Hence, I added a docker-compose.yml file to fully containerize the frontend, backend, database (PostgreSQL), and Redis cache. 
+    I also included NGINX as a reverse proxy. Only port 80 is exposed to the host. This made the dev environment easy to start and replicate using docker-compose up, with no manual setup needed outside the containers.
