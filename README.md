@@ -1,4 +1,4 @@
-# DevOps with Docker - MOOC by the University of Helsinki
+# DevOps with Docker by University of Helsinki
 
 This repo was created while taking **"Devops with Docker"** course, that is provided [online](https://devopswithdocker.com/) by the University of Helsinki. 
 This is 2025 version of the course. The repo contains code and image solutions to the exercises presented in the course.
