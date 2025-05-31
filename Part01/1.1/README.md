@@ -26,9 +26,9 @@ Show all containers (including stopped ones):
 ```bash
 docker ps -a
 ```
-| CONTAINER ID | IMAGE  | COMMAND                  | CREATED         | STATUS                   | PORTS   | NAMES   |
-|--------------|--------|--------------------------|-----------------|--------------------------|---------|---------|
-| a1b2c3d4e5f6 | nginx  | "/docker-entrypoint.…"   | 30 seconds ago  | Up 29 seconds            | 80/tcp  | nginx1  |
-| b2c3d4e5f6g7 | nginx  | "/docker-entrypoint.…"   | 30 seconds ago  | Exited (0) 10 seconds ago|         | nginx2  |
-| c3d4e5f6g7h8 | nginx  | "/docker-entrypoint.…"   | 30 seconds ago  | Exited (0) 8 seconds ago |         | nginx3  |
+| CONTAINER ID | IMAGE  | COMMAND                  | CREATED         | STATUS                    | PORTS   | NAMES   |
+|--------------|--------|--------------------------|-----------------|---------------------------|---------|---------|
+| a1b2c3d4e5f6 | nginx  | "/docker-entrypoint.…"   | 30 seconds ago  | Up 29 seconds             | 80/tcp  | nginx1  |
+| b2c3d4e5f6g7 | nginx  | "/docker-entrypoint.…"   | 30 seconds ago  | Exited (0) 10 seconds ago |         | nginx2  |
+| c3d4e5f6g7h8 | nginx  | "/docker-entrypoint.…"   | 30 seconds ago  | Exited (0) 8 seconds ago  |         | nginx3  |
 
