@@ -1,4 +1,4 @@
-## [Assignment](https://courses.mooc.fi/org/uh-cs/courses/devops-with-docker/chapter-3/volumes-in-action#86174c31-e0ac-44c5-b03f-338267034c4e)
+## [Assignment](https://courses.mooc.fi/org/uh-cs/courses/devops-with-docker/chapter-3/containers-in-development#86174c31-e0ac-44c5-b03f-338267034c4e)
 
 > **EXERCISE 2.11: Your dev env**
 >
