@@ -1,6 +1,6 @@
 ## [Assignment](https://courses.mooc.fi/org/uh-cs/courses/devops-with-docker/chapter-2/utilizing-tools-from-the-registry#191c75dc-7b7e-489d-a0b0-976646dcd735)
 
-> **EXERCISE 1.16: HOMEWORK**
+> **EXERCISE 1.16: Cloud deployment**
 > 
 > It is time to wrap up this part and run a containerized app in the cloud.
 
