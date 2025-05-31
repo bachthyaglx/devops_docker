@@ -39,6 +39,7 @@
     RUN go build
     EXPOSE 8080
     CMD ["./server"]
-    ### Backend Image Size Change
+    
+### Backend Image Size Change
 
 ![Solution to Exercise 3.6](https://raw.githubusercontent.com/VikSil/DevOps_with_Docker/refs/heads/trunk/Part3/Exercise_3.6/backend_change.png)
