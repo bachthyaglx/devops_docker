@@ -22,7 +22,8 @@
     EXPOSE 8080
     CMD ["java", "-jar", "app.jar"]
     
-    Command
+  ### Commands
+  
     mvn clean package
     docker build -t spring-success-app .
     docker run -d -p 8080:8080 spring-success-app
