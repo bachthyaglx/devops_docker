@@ -8,7 +8,7 @@
 
 ## Solution
 
-### Dockerfile before
+### Frontend Dockerfile before
 
     FROM node:16
     WORKDIR /usr/src/app
@@ -19,7 +19,7 @@
     EXPOSE 5000
     CMD ["serve", "-s", "build", "-l", "5000"]
 
-### Dockerfile after
+### Frontend Dockerfile after
 
     FROM node:16-alpine as builder
     WORKDIR /app
