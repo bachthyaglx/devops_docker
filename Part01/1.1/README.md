@@ -11,6 +11,18 @@
 > As an answer write the output for `docker ps -a` which shows 2 stopped containers and one running.
 
 ## Solution
+Start 3 containers from an image like nginx:
+```bash
+docker run -d --name nginx1 nginx
+docker run -d --name nginx2 nginx
+docker run -d --name nginx3 nginx
+```
+Stop 2 containers (ie: nginx1 and nginx2)
+```bash
+docker stop nginx1
+docker stop nginx2
+```
+Show all containers (including stopped ones):
 ```bash
 docker ps -a
 ```
